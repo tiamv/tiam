@@ -1,0 +1,55 @@
+local RunService = game:GetService("RunService")
+local Players = game:GetService("Players")
+local UserInputService = game:GetService("UserInputService")
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local rootPart = character:WaitForChild("HumanoidRootPart")
+local dumpstersFolder = workspace:WaitForChild("Dumpsters")
+local teleportEnabled = false
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "That game is trash  ", HidePremium = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+local Tab = Window:MakeTab({
+    Name = "Main",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "if you got any idea on how i can bypass the anticheat dm tiamm"
+})
+local Section = Tab:AddSection({
+	Name = "anticheat is just a distance check"
+})
+local Section = Tab:AddSection({
+	Name = "i enjoy goth emo mommys"
+})
+local function teleportAndClick()
+    for _, dumpster in ipairs(dumpstersFolder:GetChildren()) do
+        if dumpster:IsA("Model") then
+            local UnionPart = dumpster:FindFirstChildWhichIsA("UnionOperation")
+            if UnionPart then
+                local Clickdetect = UnionPart:FindFirstChildWhichIsA("ClickDetector")
+                local distance = (rootPart.Position - UnionPart.Position).magnitude
+                if Clickdetect  then -- and distance < 10 je sais pas comment fix lanticheat il est guez en plus c moi jlui est dit mdrr
+                    print(distance)
+                    rootPart.CFrame = UnionPart.CFrame * CFrame.new(0, -4, 0)
+                    task.wait(0.2)
+                    fireclickdetector(Clickdetect, 1, "MouseClick")
+                    task.wait(0.1)
+                end
+            end
+        end
+    end
+end
+Tab:AddToggle({
+    Name = "Autofarm money (Dumpsters)",
+    Default = false,
+    Callback = function(Value)
+        teleportEnabled = Value 
+    end    
+})
+RunService.RenderStepped:Connect(function()
+    if teleportEnabled then
+        teleportAndClick()
+
+    end
+end)
