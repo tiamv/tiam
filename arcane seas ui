@@ -62,5 +62,13 @@ wait(0.2)
 end
   	end    
 })
+Tab:AddButton({
+	Name = "2 guis i like ( orca and infyield",
+	Callback = function()
+      		loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/richie0866/orca/master/public/latest.lua"))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+
+  	end    
+})
 
 
