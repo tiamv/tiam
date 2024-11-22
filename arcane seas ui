@@ -6,11 +6,11 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 local Section = Tab:AddSection({
-	Name = "Sectirejoin to stop hehe"
+	Name = "rejoin to stop hehe"
 })
 
 Tab:AddButton({
-	Name = "autofarm wp and moni",
+	Name = "autofarm xp and moni",
 	Callback = function()
       	while true do 
 local args = {
