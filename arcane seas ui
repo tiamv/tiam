@@ -62,12 +62,5 @@ wait(0.2)
 end
   	end    
 })
-if Players.Tiamv1 == true then
-OrionLib:MakeNotification({
-	Name = "Big noob i see u",
-	Content = "hey im in ur server u cheater",
-	Image = "rbxassetid://4483345998",
-	Time = 10
-})
 
 
