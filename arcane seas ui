@@ -1,0 +1,65 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "hello cutie", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Tab = Window:MakeTab({
+	Name = "haiii",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "Sectirejoin to stop hehe"
+})
+
+Tab:AddButton({
+	Name = "autofarm wp and moni",
+	Callback = function()
+      	while true do 
+local args = {
+    [1] = "Quest3"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("QuestRemote"):FireServer(unpack(args))
+fireclickdetector(workspace.TalkableNPCs.Blacksmith.ClickDetector, 1, "MouseClick")
+wait(0.1)
+end
+  	end    
+})
+local Section = Tab:AddSection({
+	Name = "it will stop when no more cheststststssts hehehaya"
+})
+
+Tab:AddButton({
+	Name = "autofarm chests",
+	Callback = function()
+      	local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local chestSpawns = workspace:FindFirstChild("ChestSpawns")
+local function  cum()
+    for _, part in ipairs(chestSpawns:GetDescendants()) do
+        if part:IsA("BasePart") and #part:GetChildren() > 0 then
+            if character and character:FindFirstChild("HumanoidRootPart") then
+                character.HumanoidRootPart.CFrame = part.CFrame
+                task.wait(0.1)
+            end
+        end
+    end
+end
+cum()
+
+  	end    
+})
+
+Tab:AddButton({
+	Name = "inf combo M1 whatever",
+	Callback = function()
+      		while true do 
+local args = {
+    [1] = 1,
+    [2] = "m1",
+    [3] = false
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Weapons"):FireServer(unpack(args))
+wait(0.2)
+end
+  	end    
+})
+
